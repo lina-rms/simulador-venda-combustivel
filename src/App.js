@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import RegistroVenda from "./components/RegistroVenda";
-//import RelatorioVendas from "./components/RelatorioVendas";
+import RelatorioVendas from "./components/RelatorioVendas";
 import Notificacao from "./components/Notificacao";
 import "./index.css";
 
@@ -9,9 +9,9 @@ const App = () => {
   const [vendas, setVendas] = useState([]); // Lista de vendas
   const [feedback, setFeedback] = useState(""); // Feedback
   const [precos, setPrecos] = useState({
-    gasolina: 6.5,
-    etanol: 4.8,
-    diesel: 5.2,
+    Gasolina: 6.5,
+    Etanol: 4.8,
+    Diesel: 5.2,
   }); // Preços iniciais dos combustíveis
 
   const addVenda = (venda) => {
@@ -59,7 +59,7 @@ const App = () => {
             <Notificacao message={feedback} />
           </div>
         )}
-        {/*telaAtiva === "relatorio" && <RelatorioVendas sales={vendas} />*/}
+        {telaAtiva === "relatorio" && <RelatorioVendas vendas={vendas} />}
       </main>
     </div>
   );

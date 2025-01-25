@@ -3,7 +3,7 @@ import "../styles/RegistroVenda.css";
 
 const RegistroVenda = ({ addVenda, precos, atualizarPrecos }) => {
   const [litros, setLitros] = useState(""); //quantidade de litros de combustivel
-  const [tipoCombustivel, setTipoCombustivel] = useState("gasolina"); //tipo de combustivel
+  const [tipoCombustivel, setTipoCombustivel] = useState("Gasolina"); //tipo de combustivel
   const [precoEditavel, setPrecoEditavel] = useState(precos[tipoCombustivel]); //preço do combustivel
   const [error, setError] = useState(""); //mensagem de erro
 
@@ -52,9 +52,9 @@ const RegistroVenda = ({ addVenda, precos, atualizarPrecos }) => {
             value={tipoCombustivel}
             onChange={(e) => handleAlterarTipoCombustivel(e.target.value)}
           >
-            <option value="gasolina">Gasolina</option>
-            <option value="etanol">Etanol</option>
-            <option value="diesel">Diesel</option>
+            <option value="Gasolina">Gasolina</option>
+            <option value="Etanol">Etanol</option>
+            <option value="Diesel">Diesel</option>
           </select>
         </label>
         <label>
