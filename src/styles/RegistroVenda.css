@@ -1,8 +1,67 @@
+form {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  font-size: 1.2em;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+input:focus,
+select:focus {
+  border-color: #024281;
+  outline: none;
+}
+
+form button {
+  background-color: #ffa000;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #f08307;
+}
+
+.register-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-error {
+  border-color: #d91f06;
+}
+
 /*mensagem de erro do litro*/
 .error-message {
   color: #fff;
-  background-color: #d32f2f;
-  border: 1px solid #d32f2f;
+  background-color: #d91f06;
+  border: 1px solid #d91f06;
   border-radius: 5px;
   padding: 8px;
   margin-bottom: 15px;
@@ -14,58 +73,4 @@
 
 .error-message span {
   margin-right: 10px;
-}
-
-/*campo de input com erro */
-.input-error {
-  border: 2px solid #d32f2f;
-  background-color: #f8d7da;
-}
-
-/*estilo geral */
-
-form {
-  background-color: #ffffff;
-  border: 1px solid #d91f06;
-  border-radius: 8px;
-  padding: 20px;
-  margin: 20px auto;
-  width: 90%;
-  max-width: 400px;
-}
-
-form label {
-  display: block;
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-
-form input,
-form select {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #d91f06;
-  border-radius: 5px;
-  box-sizing: border-box;
-}
-
-form button {
-  background-color: #ffc107;
-  color: #212121;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.register-button {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-form button:hover {
-  background-color: #ffa000;
 }

@@ -7,7 +7,7 @@ const RelatorioVendas = ({ vendas }) => {
       <h2>Relatório de Vendas</h2>
       {vendas.length === 0 ? (
         <div className="aviso-sem-vendas">
-          <strong>Ainda ão há vendas registradas!</strong>
+          <strong>Ainda não há vendas registradas!</strong>
         </div>
       ) : (
         <table>

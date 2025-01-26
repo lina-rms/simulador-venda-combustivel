@@ -27,15 +27,17 @@ table tr:hover {
 }
 
 .aviso-sem-vendas {
-  background-color: #f8d7da;
-  color: #721c24;
-  padding: 20px;
-  border-radius: 5px;
+  background-color: #f9f9f9;
+  color: #606970;
+  padding: 15px;
+  border-radius: 8px;
   text-align: center;
-  font-size: 1.5em;
-  font-weight: bold;
-  margin: 20px 0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 1.2em;
+  font-weight: 600;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 500px;
   animation: fadeIn 1s ease-out;
 }
 
