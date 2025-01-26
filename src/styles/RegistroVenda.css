@@ -16,10 +16,10 @@
   margin-right: 10px;
 }
 
-/* Estilo para o campo de input com erro */
+/*campo de input com erro */
 .input-error {
-  border: 2px solid #d32f2f; /* Borda vermelha */
-  background-color: #f8d7da; /* Fundo suave para indicar erro */
+  border: 2px solid #d32f2f;
+  background-color: #f8d7da;
 }
 
 /*estilo geral */
@@ -45,7 +45,7 @@ form select {
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
-  border: 1px solid #d32f2f;
+  border: 1px solid #d91f06;
   border-radius: 5px;
   box-sizing: border-box;
 }

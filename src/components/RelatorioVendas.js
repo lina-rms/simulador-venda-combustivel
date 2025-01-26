@@ -6,13 +6,16 @@ const RelatorioVendas = ({ vendas }) => {
     <div>
       <h2>Relatório de Vendas</h2>
       {vendas.length === 0 ? (
-        <p>Ainda não há registros de vendas.</p>
+        <div className="aviso-sem-vendas">
+          <strong>Ainda ão há vendas registradas!</strong>
+        </div>
       ) : (
         <table>
           <thead>
             <tr>
               <th>Tipo</th>
-              <th>Litros</th>
+              <th>Quantidade (L)</th>
+              <th>Preço por Litro (R$)</th>
               <th>Total (R$)</th>
               <th>Data e Hora</th>
             </tr>
@@ -22,6 +25,7 @@ const RelatorioVendas = ({ vendas }) => {
               <tr key={index}>
                 <td>{venda.tipoCombustivel}</td>
                 <td>{venda.litros}</td>
+                <td>{venda.precoPorLitro}</td>
                 <td>{venda.total}</td>
                 <td>{venda.data}</td>
               </tr>

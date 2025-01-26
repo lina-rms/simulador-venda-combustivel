@@ -36,6 +36,7 @@ const RegistroVenda = ({ addVenda, precos, atualizarPrecos }) => {
     addVenda({
       tipoCombustivel,
       litros: parseFloat(litros),
+      precoPorLitro: precoEditavel.toFixed(2),
       total: total.toFixed(2),
       data: new Date().toLocaleString(), //data e hora da venda
     });

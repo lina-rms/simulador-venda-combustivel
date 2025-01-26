@@ -1,18 +1,19 @@
 import React, { useState } from "react";
+import Header from "./components/Header";
 import RegistroVenda from "./components/RegistroVenda";
 import RelatorioVendas from "./components/RelatorioVendas";
 import Notificacao from "./components/Notificacao";
-import "./index.css";
+import "./styles/App.css";
 
 const App = () => {
-  const [telaAtiva, setTelaAtiva] = useState("registro"); // Estado para controlar a tela ativa
-  const [vendas, setVendas] = useState([]); // Lista de vendas
-  const [feedback, setFeedback] = useState(""); // Feedback
+  const [telaAtiva, setTelaAtiva] = useState("registro"); //estado para controlar a tela ativa
+  const [vendas, setVendas] = useState([]); //lista de vendas
+  const [feedback, setFeedback] = useState(""); //feedback
   const [precos, setPrecos] = useState({
     Gasolina: 6.5,
     Etanol: 4.8,
     Diesel: 5.2,
-  }); // Preços iniciais dos combustíveis
+  }); //preços iniciais dos combustíveis
 
   const addVenda = (venda) => {
     setVendas((vendasAnteriores) => [...vendasAnteriores, venda]);
@@ -28,23 +29,19 @@ const App = () => {
     setPrecos(precosAtualizados); //atualiza os preços dos combustíveis
   };
 
+  const alternarTela = () => {
+    setTelaAtiva((telaAnterior) =>
+      telaAnterior === "registro" ? "relatorio" : "registro"
+    );
+  };
+
   return (
     <div>
-      <header>
-        <h1>Simulador de Venda de Combustível</h1>
-        <nav>
-          {telaAtiva === "registro" && (
-            <button onClick={() => setTelaAtiva("relatorio")}>
-              Ver Relatório
-            </button>
-          )}
-          {telaAtiva === "relatorio" && (
-            <button onClick={() => setTelaAtiva("registro")}>
-              Registrar Venda
-            </button>
-          )}
-        </nav>
-      </header>
+      <Header
+        titulo="Simulador de Venda de Combustível"
+        alternarTela={alternarTela}
+        isRegistro={telaAtiva === "registro"}
+      />
 
       <main>
         {/* renderização condicional com base no estado da tela */}
