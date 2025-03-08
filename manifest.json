@@ -1,0 +1,15 @@
+{
+  "short_name": "Venda de Combustível",
+  "name": "Simulador de Venda de Combustível",
+  "icons": [
+    {
+      "src": "Logo-Atem.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
