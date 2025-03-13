@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
 import RegistroVenda from "./components/RegistroVenda";
 import RelatorioVendas from "./components/RelatorioVendas";
@@ -6,27 +6,41 @@ import Notificacao from "./components/Notificacao";
 import "./styles/App.css";
 
 const App = () => {
-  const [telaAtiva, setTelaAtiva] = useState("registro"); //estado para controlar a tela ativa
-  const [vendas, setVendas] = useState([]); //lista de vendas
-  const [feedback, setFeedback] = useState(""); //feedback
-  const [precos, setPrecos] = useState({
+  const [telaAtiva, setTelaAtiva] = useState("registro");
+  const [vendas, setVendas] = useState([]);
+  const [feedback, setFeedback] = useState("");
+
+  //recupera os preços ou setta o padrão
+  const precosIniciais = JSON.parse(localStorage.getItem("precos")) || {
     Gasolina: 6.5,
     Etanol: 4.8,
     Diesel: 5.2,
-  }); //preços iniciais dos combustíveis
+  };
 
+  const [precos, setPrecos] = useState(precosIniciais);
+
+  //carrega vendas do localStorage ao iniciar
+  useEffect(() => {
+    const vendasSalvas = JSON.parse(localStorage.getItem("vendas")) || [];
+    setVendas(vendasSalvas);
+  }, []);
+
+  //adiciona venda e salva no localStorage
   const addVenda = (venda) => {
-    setVendas((vendasAnteriores) => [...vendasAnteriores, venda]);
-    setFeedback("Venda registrada com sucesso!"); //mensagem de confirmação de venda
+    const novasVendas = [...vendas, venda];
+    setVendas(novasVendas);
+    localStorage.setItem("vendas", JSON.stringify(novasVendas)); //localStorage
+    setFeedback("Venda registrada com sucesso!");
 
-    //limpa a mensagem após 3 segundos
     setTimeout(() => {
       setFeedback("");
     }, 3000);
   };
 
+  //atualiza preços e salva no localStorage
   const atualizarPrecos = (precosAtualizados) => {
-    setPrecos(precosAtualizados); //atualiza os preços dos combustíveis
+    setPrecos(precosAtualizados);
+    localStorage.setItem("precos", JSON.stringify(precosAtualizados)); //salva os preços
   };
 
   const alternarTela = () => {
@@ -44,7 +58,6 @@ const App = () => {
       />
 
       <main>
-        {/* renderização condicional com base no estado da tela */}
         {telaAtiva === "registro" && (
           <div>
             <RegistroVenda
@@ -52,7 +65,6 @@ const App = () => {
               precos={precos}
               atualizarPrecos={atualizarPrecos}
             />
-            {/* notificação de venda */}
             <Notificacao message={feedback} />
           </div>
         )}
