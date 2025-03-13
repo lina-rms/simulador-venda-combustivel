@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/simulador-venda-combustivel/static/css/main.319560d2.css",
-    "main.js": "/simulador-venda-combustivel/static/js/main.2e06d416.js",
+    "main.js": "/simulador-venda-combustivel/static/js/main.d1783e9b.js",
     "index.html": "/simulador-venda-combustivel/index.html",
     "main.319560d2.css.map": "/simulador-venda-combustivel/static/css/main.319560d2.css.map",
-    "main.2e06d416.js.map": "/simulador-venda-combustivel/static/js/main.2e06d416.js.map"
+    "main.d1783e9b.js.map": "/simulador-venda-combustivel/static/js/main.d1783e9b.js.map"
   },
   "entrypoints": [
     "static/css/main.319560d2.css",
-    "static/js/main.2e06d416.js"
+    "static/js/main.d1783e9b.js"
   ]
 }
